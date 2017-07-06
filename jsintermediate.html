@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Part 1
+        function star_string(stars) {
+            str = "";
+            for (var i = 0; i < stars; i++) {
+                str += "*";
+            }
+            return str;
+        }
+
+
+        star_string(10);
+
+        // Part 2
+        function draw_stars(array) {
+            str = "";
+            for (var i = 0; i < array.length; i++) {
+                for (var j = 0; j < array[i]; j++) {
+                    str += "*";
+
+                }
+                (str += "\n")
+            }
+
+            return str
+        }
+
+        console.log(draw_stars([1, 2, 3, 7]))
+
+        // Part 3
+        function draw_stars(array) {
+            str = "";
+            for (var i = 0; i < array.length; i++) {
+                if (array[i].constructor === String) {
+                    for (k = 0; k < array[i].length; k++) {
+                        var letter = array[i][0]
+                        str += letter.toLowerCase();
+                    }
+                } else {
+                    for (var j = 0; j < array[i]; j++) {
+                        str += "*";
+
+                    }
+                }
+                (str += "\n")
+            }
+            return str
+        }
+
+        console.log(draw_stars([1, "Thatever", 3, 7]))
+    </script>
+
+</body>
+
+</html>

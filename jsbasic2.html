@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function magic_multiply(x, y) {
+            if (y.constructor === String) {
+                error = "Error: Can not multiply by String";
+                return (error);
+            } else if (x.constructor === Array) {
+                for (let i = 0; i < x.length; i++) {
+                    x[i] = x[i] * y;
+                }
+            } else if (x.constructor === String) {
+                return x.repeat(y);
+            } else {
+                return x * y;
+            }
+            return x;
+        }
+
+
+        magic_multiply("String", 4);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Part 1
+        class Ninja {
+            constructor(name) {
+                this.name = name;
+                this.health = 100;
+                this.speed = 3;
+                this.strength = 3;
+            }
+
+            sayName() {
+                return this.name;
+            }
+
+            showStats() {
+                console.log("Health: " + this.health);
+                console.log("Speed: " + this.speed);
+                console.log("Strength: " + this.strength)
+
+            }
+
+            drinkSake() {
+                return this.health += 10;
+                //  
+            }
+        }
+
+        // let ninja1 = new Ninja("Dhaval");
+
+        // ninja1.drinkSake().drinkSake();
+
+        // Extend the Ninja class and create the Sensei class. A Sensei should have 200 Health, 10 speed, and 10 strength by default. In addition, a Sensei should have a new attribute called wisdom, and the default should be 10. Finally, add the speakWisdom() method. speakWisdom() should call the drinkSake() method from the Ninja class, before console.logging a wise message.
+
+        class Sensei extends Ninja {
+            constructor(name) {
+                super(name);
+                this.health = 200;
+                this.speed = 10;
+                this.strength = 10;
+                this.wisdom = "Life is a beach and I\'m just playing in the sand";
+            }
+
+            speakWisdom() {
+                // let parentSake = super.drinkSake();
+                let parentSake = super.drinkSake();
+                console.log(parentSake);
+                console.log(this.wisdom);
+                return this
+            }
+        }
+
+        let super_sensei = new Sensei("Master Splinter");
+
+        super_sensei.speakWisdom();
+    </script>
+
+</body>
+
+</html>

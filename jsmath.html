@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function zero_negativity(array) {
+            var status = true;
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] > 0) {
+                    continue;
+                } else if (array[i] < 0) {
+                    status = false;
+                }
+            }
+            return status
+        }
+
+        function is_even(num) {
+            if (num % 2 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function how_many_even(array) {
+            newArray = []
+            for (var i = 0; i < array.length; i++) {
+                if (is_even(array[i])) {
+                    newArray.push(array[i]);
+                }
+            }
+            return newArray
+        }
+
+        function create_dummy_array(n) {
+            newArray = []
+            for (var i = 0; i < n; i++) {
+                newArray.push(Math.floor(Math.random(i) * 10));
+            }
+            return newArray;
+        }
+        create_dummy_array(20);
+
+        function random_choice(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        random_choice([1, 2, 3, 4, 11, 23, 44])
+    </script>
+
+</body>
+
+</html>
